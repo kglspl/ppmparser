@@ -11,7 +11,8 @@ Requirements:
 
 ```py
 with PPMParser(ppm_filename).open() as ppm:
-    print(ppm.get_3d_coords(1000, 2000)
+    x, y, z, nx, ny, nz = ppm.get_3d_coords(1000, 2000)
+    print(x, y, z, nx, ny, nz)
 ```
 
 Note that this operation is very fast because PPMParser uses file seek operation to read the correct coordinates.
