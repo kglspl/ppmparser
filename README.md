@@ -48,3 +48,15 @@ with PPMParser(ppm_filename).open() as ppm:
     for imx, imy, x, y, z, nx, ny, nz in ppm.read_next_coords(skip_empty=True):
         a[imx, imy] = ...
 ```
+
+# Utility: cropppm.py
+
+Utility `cropppm` crops the input PPM file and writes the result to output PPM file. In the process stride can be applied. The output filename, if not specified, is constructed automatically.
+
+Usage:
+```
+$ pip install pipenv
+$ pipenv install
+$ pipenv shell
+<pipenv> $ python cropppm.py -i /path/to/input.ppm -o /path/to/output.ppm --stride 2 -roi 1000-2000,4000-5000
+```
